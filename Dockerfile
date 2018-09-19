@@ -17,4 +17,4 @@ RUN npm install pm2 -g
 EXPOSE 3000
 
 WORKDIR /app
-CMD pm2 start index.js -i max --no-daemon
+CMD pm2 start index.js -o NULL -e NULL -i  max --no-daemon
