@@ -15,4 +15,4 @@ RUN rm -rf /var/cache/apk/*
 RUN npm install pm2 -g
 
 WORKDIR /app
-CMD pm2 start index.js -i max --no-daemon
+CMD pm2 start index.js -o NULL -e NULL -i  max --no-daemon
