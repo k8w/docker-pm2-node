@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:alpine
 
 # Install base packages
 RUN apk update
@@ -14,7 +14,5 @@ RUN rm -rf /var/cache/apk/*
 # Install PM2
 RUN npm install pm2 -g
 
-EXPOSE 3000
-
 WORKDIR /app
-CMD pm2 start index.js -o NULL -e NULL -i  max --no-daemon
+CMD pm2 start index.js -o NULL -e NULL ${INSTANCE_NUM:+"-i ${INSTANCE_NUM}"} && pm2 log all
