@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:alpine
 
 # Install base packages
 RUN apk update
